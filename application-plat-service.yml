@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+     profiles: dev
+     application:
+       name: employee-provider
+server:
+  port: 8001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.eureka-7001.com:7001/eureka
+  instance:
+    prefer-ip-address: true #显示真实IP
+---
+spring:
+  profiles: test
+  application:
+    name: employee-provider-test
+server:
+  port: 8002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.eureka-7001.com:7001/eureka
+  instance:
+    prefer-ip-address: true  #显示真实IP
